@@ -4,6 +4,8 @@ import App from './App.vue'
 // 引入路由器
 import router from "@/router";
 
+import '@/assets/icon/iconfont.css'
+
 // 创建一个应用
 const app = createApp(App)
 
