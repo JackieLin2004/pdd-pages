@@ -1,29 +1,19 @@
 <script setup lang="ts">
-import {ref} from "vue";
-const test = ()=>{
-  proDuctList.value.forEach((item)=>{
-    item.name = '1';
-  })
-}
-const proDuctList = ref([
-  {
-    id: 1,
-    name: '',
-    price: ''
-  },
-  {
-    id: 1,
-    name: '',
-    price: ''
-  },
-])
+import {RouterView} from "vue-router";
+import HomeHead from "@/components/home/HomeHead.vue";
 </script>
 
 <template>
-  <div >这里是首页</div>
-  <test :product="item"></test>
+  <div class="home-rapper">
+    <HomeHead/>
+    <RouterView></RouterView>
+  </div>
 </template>
 
 <style scoped>
-
+.home-rapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: #dee2e6;
+}
 </style>

@@ -7,6 +7,8 @@ import Video from "@/views/Video.vue";
 import Coupon from "@/views/Coupon.vue";
 import Chat from "@/views/Chat.vue";
 import Person from "@/views/Person.vue";
+import Recommend from "@/views/Recommend.vue";
+import Computer from "@/views/Computer.vue";
 
 // 创建路由器
 const router = createRouter({
@@ -17,7 +19,19 @@ const router = createRouter({
         {
             name: 'home',
             path: '/home',
-            component: Home
+            component: Home,
+            children: [
+                {
+                    name: 'recommend',
+                    path: 'recommend',
+                    component: Recommend
+                },
+                {
+                    name: 'computer',
+                    path: 'computer',
+                    component: Computer
+                }
+            ]
         },
         {
             name: 'video',
