@@ -3,9 +3,11 @@
 </script>
 
 <template>
-  <div>这里是电脑页面</div>
+  <div class="test2">这里是电脑页面</div>
 </template>
 
 <style scoped>
-
+.test2 {
+  margin-top: 30vw;
+}
 </style>

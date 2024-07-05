@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import {RouterLink} from "vue-router";
-import {ref} from "vue";
+import {useRouter, useRoute} from 'vue-router'
+import {ref, onMounted} from "vue";
 
 const kindList = ref([
   {id: 1, title: '推荐'},
@@ -11,6 +11,28 @@ const kindList = ref([
   {id: 6, title: '医药'},
   {id: 7, title: '运动'}
 ])
+
+const selectedTitle = ref<string>('推荐')
+
+const router = useRouter()
+const route = useRoute()
+const changePage = (title: string) => {
+  if (title === '推荐') {
+    router.push({name: 'recommend'})
+  } else {
+    router.push({name: 'computer'})
+  }
+  selectedTitle.value = title
+}
+
+onMounted(() => {
+  // 设置默认选中项
+  if (route.path === '/home' || route.path === '/home/recommend') {
+    selectedTitle.value = '推荐'
+  } else if (route.path === '/home/computer') {
+    selectedTitle.value = '电脑'
+  }
+})
 </script>
 
 <template>
@@ -32,7 +54,13 @@ const kindList = ref([
     <div class="navigate">
       <div class="navigate-list">
         <div v-for="item in kindList" :key="item.id">
-          <div class="list">{{ item.title }}</div>
+          <div
+              class="list"
+              :class="{ selected: selectedTitle === item.title }"
+              @click="() => changePage(item.title)"
+          >
+            {{ item.title }}
+          </div>
         </div>
       </div>
     </div>
@@ -119,7 +147,11 @@ const kindList = ref([
   font-weight: 600;
   font-size: 1.05rem;
   color: #70737c;
-  /*border-bottom: solid 3px red;*/
+  cursor: pointer;
 }
 
+.head-wrapper .navigate .navigate-list .list.selected {
+  color: #c92a2a;
+  border-bottom: solid 3px #c92a2a;
+}
 </style>
