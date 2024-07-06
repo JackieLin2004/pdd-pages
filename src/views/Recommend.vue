@@ -1,13 +1,15 @@
 <script setup lang="ts">
-
+import PinCircle from "@/components/home/recommend/PinCircle.vue";
 </script>
 
 <template>
-  <div class="test1">这里是推荐页面</div>
+  <div class="recommend-wrapper">
+    <PinCircle/>
+  </div>
 </template>
 
 <style scoped>
-.test1 {
+.recommend-wrapper {
   margin-top: 30vw;
 }
 </style>

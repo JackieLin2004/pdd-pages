@@ -72,7 +72,7 @@ onMounted(() => {
   width: 100%;
   height: 30vw;
   background-color: white;
-  border-bottom: solid 1px #dddddd;
+  border-bottom: solid 1px #ced4da;
 
   position: fixed;
   left: 0;
@@ -146,7 +146,7 @@ onMounted(() => {
   align-items: center;
   font-weight: 600;
   font-size: 1.05rem;
-  color: #70737c;
+  color: #495057;
   cursor: pointer;
 }
 
