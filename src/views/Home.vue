@@ -13,7 +13,6 @@ import HomeHead from "@/components/home/HomeHead.vue";
 <style scoped>
 .home-rapper {
   width: 100vw;
-  height: 100vh;
   background-color: #dee2e6;
 }
 </style>
