@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import {RouterLink} from "vue-router";
+import {RouterLink, useRoute} from "vue-router";
+
+const route = useRoute();
 </script>
 
 <template>
-  <div class="navigate">
+  <div :class="['navigate', { 'video-page': route.name === 'video' }]">
     <RouterLink :to="{name:'home'}" active-class="active">
       <div class="menu">
         <div class="icon-font">
@@ -12,7 +14,7 @@ import {RouterLink} from "vue-router";
         <span>首页</span>
       </div>
     </RouterLink>
-    <RouterLink :to="{name:'video'}" active-class="active">
+    <RouterLink :to="{name:'video'}" active-class="active1">
       <div class="menu">
         <div class="icon-font">
           <span class="iconfont icon-shipin"></span>
@@ -57,6 +59,7 @@ import {RouterLink} from "vue-router";
   width: 100%;
   height: 16vw;
   border-top: solid 1px #dddddd;
+  z-index: 999;
 
   position: fixed;
   left: 0;
@@ -84,6 +87,10 @@ import {RouterLink} from "vue-router";
   color: #c92a2a;
 }
 
+.navigate a.active1 {
+  color: #dee2e6;
+}
+
 .navigate .menu {
   display: flex;
   flex-direction: column;
@@ -101,5 +108,10 @@ import {RouterLink} from "vue-router";
 
 .navigate .menu .icon-font .iconfont {
   font-size: 1.8rem;
+}
+
+.video-page {
+  height: 16.1vw;
+  background-color: #1c1d1f;
 }
 </style>

@@ -4,14 +4,14 @@ import HomeHead from "@/components/home/HomeHead.vue";
 </script>
 
 <template>
-  <div class="home-rapper">
+  <div class="home-wrapper">
     <HomeHead/>
     <RouterView></RouterView>
   </div>
 </template>
 
 <style scoped>
-.home-rapper {
+.home-wrapper {
   width: 100vw;
   background-color: #dee2e6;
 }
