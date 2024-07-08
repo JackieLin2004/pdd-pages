@@ -76,6 +76,13 @@
       "unicode_decimal": 58981
     },
     {
+      "icon_id": "7824758",
+      "name": "三点",
+      "font_class": "sandian",
+      "unicode": "e658",
+      "unicode_decimal": 58968
+    },
+    {
       "icon_id": "11882877",
       "name": "bg-chat",
       "font_class": "bg-chat",
