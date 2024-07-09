@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import {ref} from "vue";
 import {getImages} from "@/utils/getImagesUtil";
+import {useRouter} from 'vue-router'
 
 const RecommendedProductsList = ref([
   {
@@ -58,12 +59,17 @@ const images = import.meta.glob('@/assets/images/home/recommended-products/*.jpg
 }>>;
 
 const {imagePaths} = getImages(images);
+
+const router = useRouter();
+const changeToProductInfoPage = () => {
+  router.push({name: 'productInfo'});
+}
 </script>
 
 <template>
   <div class="recommended-products-wrapper">
     <div v-for="(product, index) in RecommendedProductsList" :key="product.id">
-      <div class="recommended-product-item">
+      <div class="recommended-product-item" @click="changeToProductInfoPage">
         <img :src="imagePaths[index]" alt="">
         <div class="recommended-product-details">
           <div class="recommended-brand-and-name">
