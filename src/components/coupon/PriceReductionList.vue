@@ -61,6 +61,7 @@ const {imagePaths} = getImages(images);
   border-radius: 6px;
   box-sizing: border-box;
   padding: 2vw 2vw;
+  margin-top: 15vw;
 }
 
 .prl-wrapper .prl-top {

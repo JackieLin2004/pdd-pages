@@ -24,6 +24,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #a5d8ff;
 }
 
 .coupon-head-wrapper .coupon-search {

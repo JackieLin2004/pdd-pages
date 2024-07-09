@@ -97,6 +97,13 @@
       "unicode_decimal": 59212
     },
     {
+      "icon_id": "15726866",
+      "name": "抢",
+      "font_class": "qiang",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
       "icon_id": "20530278",
       "name": "我的",
       "font_class": "wode",
