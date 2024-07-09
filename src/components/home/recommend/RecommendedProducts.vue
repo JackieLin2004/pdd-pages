@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import {ref, onMounted} from "vue";
+import {ref} from "vue";
+import {getImages} from "@/utils/getImagesUtil";
 
 const RecommendedProductsList = ref([
   {
@@ -52,39 +53,11 @@ const RecommendedProductsList = ref([
   }
 ]);
 
-// 使用 import.meta.glob 导入图片
-// 这行代码会动态导入指定目录下的所有 .jpg 图片文件，并生成一个包含这些文件路径的对象
-// 其中键是相对路径，值是一个异步函数，调用该函数会返回包含图片路径的模块对象
-const images = import.meta.glob('@/assets/images/home/recommended-products/*.jpg');
+const images = import.meta.glob('@/assets/images/home/recommended-products/*.jpg') as Record<string, () => Promise<{
+  default: string
+}>>;
 
-// 定义一个响应式数组 imagePaths，用于存储所有图片的路径
-// 初始值为空数组，类型为字符串数组
-const imagePaths = ref<string[]>([]);
-
-// 在组件挂载时就解析图片路径
-onMounted(async () => {
-  // 获取所有图片路径的键（相对路径）
-  // 返回包含所有键（图片的相对路径）的数组
-  const imageKeys = Object.keys(images);
-
-  // 遍历所有图片路径的键
-  // 使用 for 循环遍历 imageKeys 数组中的每一个键。
-  for (let i = 0; i < imageKeys.length; i++) {
-    // 获取当前图片的加载函数
-    // images[imageKeys[i]] 是一个异步函数，用于加载对应的图片模块
-    const loadImage = images[imageKeys[i]];
-
-    // 调用加载函数并等待结果
-    // 使用 await 调用异步函数 loadImage()，获取包含图片路径的模块对象
-    // 这里使用 TypeScript 类型断言，将结果断言为 { default: string } 类型
-    // 以确保模块对象包含 default 属性，该属性的值是图片路径
-    const imageModule = await loadImage() as { default: string };
-
-    // 将图片路径添加到 imagePaths 数组中
-    // imageModule.default 是实际的图片路径，将其添加到 imagePaths 响应式数组中
-    imagePaths.value.push(imageModule.default);
-  }
-});
+const {imagePaths} = getImages(images);
 </script>
 
 <template>

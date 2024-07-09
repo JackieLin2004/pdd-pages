@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import {ref, onMounted} from "vue";
+import {ref} from "vue";
+import {getImages} from "@/utils/getImagesUtil";
 
 const ComputerProductsList = ref([
   {
@@ -52,18 +53,11 @@ const ComputerProductsList = ref([
   }
 ]);
 
-const images = import.meta.glob('@/assets/images/home/computer-products/*.jpg');
+const images = import.meta.glob('@/assets/images/home/computer-products/*.jpg') as Record<string, () => Promise<{
+  default: string
+}>>;
 
-const imagePaths = ref<string[]>([]);
-
-onMounted(async () => {
-  const imageKeys = Object.keys(images);
-  for (let i = 0; i < imageKeys.length; i++) {
-    const loadImage = images[imageKeys[i]];
-    const imageModule = await loadImage() as { default: string };
-    imagePaths.value.push(imageModule.default);
-  }
-});
+const {imagePaths} = getImages(images);
 </script>
 
 <template>

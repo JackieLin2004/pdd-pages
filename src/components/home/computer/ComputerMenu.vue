@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import {ref, onMounted} from "vue";
+import {ref} from "vue";
+import {getImages} from "@/utils/getImagesUtil";
 
 const ComputerMenuList = ref([
   {
@@ -64,22 +65,11 @@ const ComputerMenuList = ref([
   }
 ]);
 
-const images = import.meta.glob('@/assets/images/home/computer-menu/*.jpg');
-const imagePaths = ref<string[]>([]);
+const images = import.meta.glob('@/assets/images/home/computer-menu/*.jpg') as Record<string, () => Promise<{
+  default: string
+}>>;
 
-onMounted(async () => {
-  const imageKeys = Object.keys(images).sort((a, b) => {
-    // 对图片路径的键进行排序，确保按自然数字顺序加载图片，采用正则化的方式
-    const aNumber = parseInt(a.match(/(\d+)/)?.[0] || '0');
-    const bNumber = parseInt(b.match(/(\d+)/)?.[0] || '0');
-    return aNumber - bNumber;
-  });
-  for (let i = 0; i < imageKeys.length; i++) {
-    const loadImage = images[imageKeys[i]];
-    const imageModule = await loadImage() as { default: string };
-    imagePaths.value.push(imageModule.default);
-  }
-});
+const {imagePaths} = getImages(images);
 </script>
 
 <template>
