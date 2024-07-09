@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import CouponHead from "@/components/coupon/CouponHead.vue";
+import PriceReductionList from "@/components/coupon/PriceReductionList.vue";
 </script>
 
 <template>
   <div class="coupon-wrapper">
     <CouponHead/>
+    <div class="separate"></div>
+    <PriceReductionList/>
     <div class="separate"></div>
   </div>
 </template>
@@ -14,7 +17,7 @@ import CouponHead from "@/components/coupon/CouponHead.vue";
   width: 100vw;
   background-color: #a5d8ff;
   box-sizing: border-box;
-  padding: 2.5vw 2.5vw;
+  padding: 2.5vw 3vw;
 }
 
 .coupon-wrapper .separate {
