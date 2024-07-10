@@ -55,6 +55,20 @@
       "unicode_decimal": 58966
     },
     {
+      "icon_id": "839002",
+      "name": "圆点",
+      "font_class": "yuandian",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "915621",
+      "name": "消息",
+      "font_class": "xiaoxi",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    },
+    {
       "icon_id": "1029274",
       "name": "右右",
       "font_class": "right-1-copy",
@@ -69,6 +83,13 @@
       "unicode_decimal": 58977
     },
     {
+      "icon_id": "1435194",
+      "name": "店铺",
+      "font_class": "dianpu",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
       "icon_id": "1929167",
       "name": "转发",
       "font_class": "zhuanfa",
@@ -81,6 +102,13 @@
       "font_class": "icon-test",
       "unicode": "e604",
       "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "3828386",
+      "name": "收藏",
+      "font_class": "shoucang",
+      "unicode": "e672",
+      "unicode_decimal": 58994
     },
     {
       "icon_id": "4294108",
