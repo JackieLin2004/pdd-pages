@@ -104,6 +104,13 @@
       "unicode_decimal": 58884
     },
     {
+      "icon_id": "2681693",
+      "name": "火",
+      "font_class": "huo",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
       "icon_id": "3828386",
       "name": "收藏",
       "font_class": "shoucang",
@@ -186,6 +193,13 @@
       "font_class": "lightning-full",
       "unicode": "e995",
       "unicode_decimal": 59797
+    },
+    {
+      "icon_id": "19488514",
+      "name": "交叉",
+      "font_class": "jiaocha",
+      "unicode": "e638",
+      "unicode_decimal": 58936
     },
     {
       "icon_id": "20530278",

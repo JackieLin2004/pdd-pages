@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1720598170796') format('truetype');
+  src: url('iconfont.ttf?t=1720619058076') format('truetype');
 }
 
 .iconfont {
@@ -67,6 +67,10 @@
   content: "\e604";
 }
 
+.icon-huo:before {
+  content: "\e606";
+}
+
 .icon-shoucang:before {
   content: "\e672";
 }
@@ -113,6 +117,10 @@
 
 .icon-lightning-full:before {
   content: "\e995";
+}
+
+.icon-jiaocha:before {
+  content: "\e638";
 }
 
 .icon-wode:before {

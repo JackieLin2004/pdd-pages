@@ -1,5 +1,11 @@
 <script setup lang="ts">
+import {useRouter} from "vue-router";
 
+const router = useRouter();
+
+const goToPayment = () => {
+  router.push({name: 'payment'});
+}
 </script>
 
 <template>
@@ -24,11 +30,11 @@
         <span class="text">客服</span>
       </div>
     </div>
-    <div class="footer-middle">
+    <div class="footer-middle" @click="goToPayment">
       <span>&#165;299</span>
       <span>单独购买</span>
     </div>
-    <div class="footer-right">
+    <div class="footer-right" @click="goToPayment">
       <span>&#165;149</span>
       <span>发起拼单</span>
     </div>
