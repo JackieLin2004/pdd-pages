@@ -83,6 +83,13 @@
       "unicode_decimal": 58884
     },
     {
+      "icon_id": "4294108",
+      "name": "上传",
+      "font_class": "shangchuan",
+      "unicode": "e797",
+      "unicode_decimal": 59287
+    },
+    {
       "icon_id": "4437606",
       "name": "向下",
       "font_class": "xiangxia",
@@ -95,6 +102,13 @@
       "font_class": "dizhi",
       "unicode": "e60c",
       "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "5387949",
+      "name": "向左_o",
+      "font_class": "xiangzuo_o",
+      "unicode": "eb9a",
+      "unicode_decimal": 60314
     },
     {
       "icon_id": "6129177",
@@ -137,6 +151,13 @@
       "font_class": "qiang",
       "unicode": "e629",
       "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "18170247",
+      "name": "电,闪电,电力,电量",
+      "font_class": "lightning-full",
+      "unicode": "e995",
+      "unicode_decimal": 59797
     },
     {
       "icon_id": "20530278",
