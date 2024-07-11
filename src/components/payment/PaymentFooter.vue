@@ -8,32 +8,33 @@ const priceStore = usePriceStore();
 const dialogVisible = ref(false);
 const router = useRouter();
 
-const pay = () => {
+
+const handlePayment = () => {
   dialogVisible.value = true;
+  setTimeout(() => {
+    dialogVisible.value = false;
+    router.push('/home');
+  }, 3000);
 };
 
-const redirectToHome = () => {
-  router.push('/');
+const handleClose = () => {
+  dialogVisible.value = false;
+  router.push('/home');
 };
 </script>
 
 <template>
   <div class="payment-footer-wrapper">
-    <el-button plain @click="pay">
-      <span>立即支付&nbsp;&#165;{{ priceStore.finalPrice }}</span>
-    </el-button>
+    <span @click="handlePayment">立即支付&nbsp;&#165;{{ priceStore.finalPrice }}</span>
+
     <el-dialog
-        title="支付成功"
-        :visible.sync="dialogVisible"
-        width="30%"
-        @close="redirectToHome"
+        v-model="dialogVisible"
+        title="支付结果"
+        width="300"
+        :before-close="handleClose"
     >
-      <span>支付成功！即将返回首页...</span>
-      <template #footer>
-        <span class="dialog-footer">
-          <el-button @click="dialogVisible = false">确定</el-button>
-        </span>
-      </template>
+      <span style="color: red">支付成功！</span>
+      <span style="color: red">即将回到首页~</span>
     </el-dialog>
   </div>
 </template>

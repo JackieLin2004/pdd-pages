@@ -74,7 +74,7 @@ const router = createRouter({
         },
         {
             path: '/',
-            redirect: '/home/recommend'
+            redirect: '/login'
         }
     ]
 })
