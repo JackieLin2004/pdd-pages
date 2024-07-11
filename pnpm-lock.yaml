@@ -11,6 +11,9 @@ importers:
       element-plus:
         specifier: ^2.7.6
         version: 2.7.6(vue@3.4.31(typescript@5.4.5))
+      pinia:
+        specifier: ^2.1.7
+        version: 2.1.7(typescript@5.4.5)(vue@3.4.31(typescript@5.4.5))
       vue:
         specifier: ^3.4.29
         version: 3.4.31(typescript@5.4.5)
@@ -525,6 +528,18 @@ packages:
     resolution: {integrity: sha512-eG2dWTVw5bzqGRztnHExczNxt5VGsE6OwTeCG3fdUf9KBsZzO3R5OIIIzWR+iZA0NtZ+RDVdaoE2dK1cn6jH4g==}
     engines: {node: '>=0.10'}
     hasBin: true
+
+  pinia@2.1.7:
+    resolution: {integrity: sha512-+C2AHFtcFqjPih0zpYuvof37SFxMQ7OEG2zV9jRI12i9BOy3YQVAHwdKtyyc8pDcDyIc33WCIsZaCFWU7WWxGQ==}
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.3.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
 
   postcss@8.4.39:
     resolution: {integrity: sha512-0vzE+lAiG7hZl1/9I8yzKLx3aR9Xbof3fBHKunvMfOCYAtMhrsnccJY2iTURb9EZd5+pLuiNV9/c/GZJOHsgIw==}
@@ -1050,6 +1065,14 @@ snapshots:
   picocolors@1.0.1: {}
 
   pidtree@0.6.0: {}
+
+  pinia@2.1.7(typescript@5.4.5)(vue@3.4.31(typescript@5.4.5)):
+    dependencies:
+      '@vue/devtools-api': 6.6.3
+      vue: 3.4.31(typescript@5.4.5)
+      vue-demi: 0.14.8(vue@3.4.31(typescript@5.4.5))
+    optionalDependencies:
+      typescript: 5.4.5
 
   postcss@8.4.39:
     dependencies:

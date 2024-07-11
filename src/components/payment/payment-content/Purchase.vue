@@ -1,5 +1,12 @@
 <script setup lang="ts">
+import {usePriceStore} from '@/store/priceStore';
+import {useNameStore} from "@/store/categoryStore";
+import {computed} from "vue";
 
+const priceStore = usePriceStore();
+const nameStore = useNameStore();
+const selectedPrice = computed(() => priceStore.selectedPrice);
+const selectedName = computed(() => nameStore.selectedName);
 </script>
 
 <template>
@@ -17,14 +24,14 @@
           <div class="price-show">
             <span>全网低价</span>
             &nbsp;
-            <span style="font-size: 1.3rem">&#165;229</span>
+            <span style="font-size: 1.3rem">&#165;{{ selectedPrice }}</span>
           </div>
           <div class="price-discount">
             <div class="discount">2件9.9折</div>
           </div>
           <div class="category-choose">
             <span>已选：</span>
-            <span>星际迷航-三模-灵动轴</span>
+            <span>{{ selectedName }}</span>
           </div>
           <div class="product-quantity">
             <span style="font-size: 1.5rem;" class="iconfont icon-jianhao-"></span>

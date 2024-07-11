@@ -1,40 +1,44 @@
 <script setup lang="ts">
 import {ref, onMounted} from 'vue';
+import {usePriceStore} from '@/store/priceStore';
+import {useNameStore} from "@/store/categoryStore";
 
 const CategoryList = ref([
   {
     id: 1,
     name: '星际迷航-三模-灵动轴',
-    price: 299,
+    price: 229,
     isHot: false
   },
   {
     id: 2,
     name: '星际迷航-三模-灰木轴',
-    price: 299,
+    price: 199,
     isHot: true
   },
   {
     id: 3,
     name: '乌野橘光-三模-太空金轴',
-    price: 299,
+    price: 149,
     isHot: true
   },
   {
     id: 4,
     name: '落日海岸-三模-灵动轴',
-    price: 299,
+    price: 229,
     isHot: false
   },
   {
     id: 5,
     name: '旷野绿洲-三模-灰木轴',
-    price: 299,
+    price: 199,
     isHot: false
   }
 ])
 
 const selectedButton = ref<number | null>(null);
+const priceStore = usePriceStore();
+const nameStore = useNameStore();
 
 onMounted(() => {
   // 初始化时将第一个按钮设为选中
@@ -43,8 +47,10 @@ onMounted(() => {
   }
 });
 
-const selectButton = (id: number) => {
-  selectedButton.value = id;
+const selectButton = (item: { id: number, price: number, name: string }) => {
+  selectedButton.value = item.id;
+  priceStore.setSelectedPrice(item.price);
+  nameStore.setSelectedName(item.name);
 };
 </script>
 
@@ -56,7 +62,7 @@ const selectButton = (id: number) => {
         <el-button type="info"
                    class="info-button"
                    :class="{ 'selected': selectedButton === item.id }"
-                   @click="selectButton(item.id)">
+                   @click="selectButton(item)">
           <span v-if="item.isHot" class="iconfont icon-huo"></span>
           <span>{{ item.name }}</span>
           &nbsp;&nbsp;
