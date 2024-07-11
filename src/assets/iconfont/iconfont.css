@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id  */
-  src: url('iconfont.ttf?t=1720666430576') format('truetype');
+  src: url('iconfont.ttf?t=1720680373488') format('truetype');
 }
 
 .iconfont {
@@ -73,6 +73,10 @@
 
 .icon-huo:before {
   content: "\e606";
+}
+
+.icon-anquan:before {
+  content: "\e668";
 }
 
 .icon-shoucang:before {

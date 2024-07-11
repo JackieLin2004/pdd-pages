@@ -11,6 +11,7 @@ import Recommend from "@/views/Recommend.vue";
 import Computer from "@/views/Computer.vue";
 import ProductInfo from "@/views/ProductInfo.vue";
 import Payment from "@/views/Payment.vue";
+import Login from "@/views/Login.vue";
 
 // 创建路由器
 const router = createRouter({
@@ -65,6 +66,11 @@ const router = createRouter({
             name: 'payment',
             path: '/payment',
             component: Payment
+        },
+        {
+            name: 'login',
+            path: '/login',
+            component: Login
         },
         {
             path: '/',

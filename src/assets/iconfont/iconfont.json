@@ -118,6 +118,13 @@
       "unicode_decimal": 58886
     },
     {
+      "icon_id": "2742624",
+      "name": "安全",
+      "font_class": "anquan",
+      "unicode": "e668",
+      "unicode_decimal": 58984
+    },
+    {
       "icon_id": "3828386",
       "name": "收藏",
       "font_class": "shoucang",

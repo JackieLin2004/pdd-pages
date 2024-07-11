@@ -1,10 +1,15 @@
 <script setup lang="ts">
+import {useRouter} from 'vue-router'
 
+const router = useRouter();
+const TurnToLogin = () => {
+  router.push({name: 'login'});
+}
 </script>
 
 <template>
   <div class="person-info-wrapper">
-    <div class="person-info-left">
+    <div class="person-info-left" @click="TurnToLogin">
       <img src="@/assets/images/person/p1.jpg" alt="">
     </div>
     <div class="person-info-middle">
