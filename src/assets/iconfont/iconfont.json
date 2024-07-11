@@ -13,6 +13,13 @@
       "unicode_decimal": 983378
     },
     {
+      "icon_id": "577314",
+      "name": "加号2-fill",
+      "font_class": "jiahao2fill",
+      "unicode": "e728",
+      "unicode_decimal": 59176
+    },
+    {
       "icon_id": "579860",
       "name": "微信",
       "font_class": "weixin",
@@ -151,6 +158,13 @@
       "font_class": "xiaoxitongzhitixinglingshenglingdang-xianxing",
       "unicode": "e795",
       "unicode_decimal": 59285
+    },
+    {
+      "icon_id": "7312585",
+      "name": "减号",
+      "font_class": "jianhao-",
+      "unicode": "e605",
+      "unicode_decimal": 58885
     },
     {
       "icon_id": "7450637",

@@ -16,7 +16,6 @@
   position: fixed;
   left: 0;
   bottom: 0;
-  z-index: 99;
   display: flex;
   background-color: #c92a2a;
 }

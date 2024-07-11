@@ -3,6 +3,7 @@ import PaymentHead from "@/components/payment/PaymentHead.vue";
 import PaymentFooter from "@/components/payment/PaymentFooter.vue";
 import Address from "@/components/payment/Address.vue";
 import PaymentContent from "@/components/payment/PaymentContent.vue";
+import Suggestion from "@/components/payment/payment-content/Suggestion.vue";
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import PaymentContent from "@/components/payment/PaymentContent.vue";
     <div class="separate"></div>
     <PaymentContent/>
   </div>
+  <suggestion/>
   <PaymentFooter/>
 </template>
 

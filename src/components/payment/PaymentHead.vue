@@ -31,7 +31,6 @@ const goBack = () => {
   position: fixed;
   left: 0;
   top: 0;
-  z-index: 99;
   display: flex;
 }
 
