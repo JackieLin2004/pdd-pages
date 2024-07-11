@@ -1,12 +1,24 @@
 <script setup lang="ts">
 import {usePriceStore} from '@/store/priceStore';
 import {useNameStore} from "@/store/categoryStore";
+import {useQuantityStore} from '@/store/quantityStore';
 import {computed} from "vue";
 
 const priceStore = usePriceStore();
 const nameStore = useNameStore();
 const selectedPrice = computed(() => priceStore.selectedPrice);
 const selectedName = computed(() => nameStore.selectedName);
+
+const quantityStore = useQuantityStore();
+const quantity = computed(() => quantityStore.quantity);
+
+const increment = () => {
+  quantityStore.increment();
+};
+
+const decrement = () => {
+  quantityStore.decrement();
+};
 </script>
 
 <template>
@@ -22,9 +34,10 @@ const selectedName = computed(() => nameStore.selectedName);
         </div>
         <div class="purchase-box-down-right">
           <div class="price-show">
-            <span>全网低价</span>
+            <span v-if="quantityStore.quantity === 1">全网低价</span>
+            <span v-else>{{ quantity }}件券后价格</span>
             &nbsp;
-            <span style="font-size: 1.3rem">&#165;{{ selectedPrice }}</span>
+            <span style="font-size: 1.3rem">&#165;{{ priceStore.finalPrice }}</span>
           </div>
           <div class="price-discount">
             <div class="discount">2件9.9折</div>
@@ -34,9 +47,9 @@ const selectedName = computed(() => nameStore.selectedName);
             <span>{{ selectedName }}</span>
           </div>
           <div class="product-quantity">
-            <span style="font-size: 1.5rem;" class="iconfont icon-jianhao-"></span>
-            <span style="font-size: 1.3rem; margin-bottom: 0.5vw; color: black">1</span>
-            <span style="font-size: 1.5rem;" class="iconfont icon-jiahao2fill"></span>
+            <span style="font-size: 1.5rem;" class="iconfont icon-jianhao-" @click="decrement"></span>
+            <span style="font-size: 1.3rem; margin-bottom: 0.5vw; color: black">{{ quantity }}</span>
+            <span style="font-size: 1.5rem;" class="iconfont icon-jiahao2fill" @click="increment"></span>
             <span style="color: red;" class="iconfont icon-huo"></span>
             <span style="font-size: 0.9rem; font-weight: bold; color: red">已拼1.2万+件</span>
           </div>

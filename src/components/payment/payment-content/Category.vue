@@ -43,7 +43,8 @@ const nameStore = useNameStore();
 onMounted(() => {
   // 初始化时将第一个按钮设为选中
   if (CategoryList.value.length > 0) {
-    selectedButton.value = CategoryList.value[0].id;
+    // selectedButton.value = CategoryList.value[0].id;
+    selectButton(CategoryList.value[0]);
   }
 });
 

@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import {usePriceStore} from '@/store/priceStore';
 
+const priceStore = usePriceStore();
 </script>
 
 <template>
   <div class="payment-footer-wrapper">
-    <span>立即支付&nbsp;&#165;229</span>
+    <span>立即支付&nbsp;&#165;{{ priceStore.finalPrice }}</span>
   </div>
 </template>
 
