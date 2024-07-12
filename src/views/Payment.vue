@@ -13,7 +13,7 @@ import Suggestion from "@/components/payment/payment-content/Suggestion.vue";
     <div class="separate"></div>
     <PaymentContent/>
   </div>
-  <suggestion/>
+  <Suggestion/>
   <PaymentFooter/>
 </template>
 
